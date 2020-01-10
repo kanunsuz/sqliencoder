@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+    @import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+font-family: 'Lato', sans-serif; padding: 0; margin: 0; list-style: none; border: 0; text-decoration: none;  font-size: 14px;
+}
+body{
+background-color:#18182f;
+padding: 55px;
+
+}
+.logo{
+width:810px;
+margin:auto;
+background-color:#18182f;
+border:1px solid black;
+text-align: center;
+background-image: url(dott.png);
+
+}
+
+.orta{
+max-width:810px;
+border:1px solid white;
+margin:auto;
+height: 500px;
+background-image:url('x2.jpg');
+background-size: cover;
+background-position: center;
+overflow: hidden;
+
+}
+
+.menu{
+max-width:810px;
+overflow:hidden;
+background-color:#18182f;
+margin:auto;
+border-top:1px solid white;
+
+
+}
+.menu ul li {
+float:left;
+
+}
+.menu ul li a{
+display: block;
+padding: 10px 20px;
+color:#fff;
+border-right:1px solid white;
+
+}
+
+.menu ul li a:hover{
+background-color:#555;
+color:black;
+}
+.menu .diger{
+float:right;
+}
+.ortaic{
+height: 100%;
+width:  100%;
+color:#fff;
+}
+.ortayazi{
+padding: 20px;
+}
+.ortayazi strong{
+color:#fff;
+font-size: 30px;
+}
+.ortayazi .surum{
+color:gray;
+}
+.ortayazi p{
+background-image: url(dott.png);
+display: inline-block;
+}
+.cizgi{
+height: 6px;
+background: url(cizgi.png) repeat-x 0 0;
+border: 0;
+
+}
+.logoust img{
+z-index: -1;
+position: fixed;
+_position: absolute;
+bottom: 100px;
+right: 0px;
+right:0px;
+top:0px;
+width:180px;
+}
+.ust{
+width:100%;
+position:fixed;
+left:0px;
+top:0px;
+background:#166560;
+text-align:center;
+display: block;
+border:1px solid #519ebd;
+
+}
+form {margin: 0;}
+h1 {line-height: 0.85em; border-bottom: 2px solid;
+  margin-bottom: 0.33em; padding-bottom: 0;}
+
+textarea {
+   max-width:810px;
+   padding: 5px;
+   background: #000;
+   color:#ffffff;
+   font-size:15px;
+   #background-image: url("c.png");
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-color: rgba(0, 0, 0, 0.9);
+
+}
+textarea:focus{
+      outline: none !important;
+      border-color: #70c90e;
+    }
+.button{
+  box-sizing: border-box;
+  padding: 0.5em 1em;
+  background: #000;
+  border: 1px solid rgb(59,252,52);
+  font-size: 1em;
+  color: rgb(59,252,52);
+  margin:4px;
+}
+
+pre{
+font-family: monospace,monospace;
+color:#00FF00;
+background-color:black;
+margin:1em 0px;
+display: inline-block;
+font-size:13px;
+border:1px solid #166560;
+padding: 3px;
+margin:3px;
+
+}
+pre i{
+color:white;
+}
+.firma img{
+width:115px;
+}
+.firma p{
+background-color: black;
+text-decoration-style: none;
+}
+.firma a:link{
+color:white;
+text-decoration: underline;
+}
+.firma a:visited{
+color:white;
+text-decoration: underline;
+}
+figure{
+display: inline-block;
+background-color: black;
+margin:  6px;
+padding: 4px;
+border:1px solid #166560;
+}

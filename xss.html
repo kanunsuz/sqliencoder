@@ -1,0 +1,136 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN"
+			"http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="t.js">
+<title>XSS Payload Generator/Encoder</title>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Teko&display=swap');
+
+body {background: black; color: #70c90e; font-family: 'Roboto Condensed', sans-serif;
+}
+form {margin: 0;}
+h1 {line-height: 0.85em; border-bottom: 2px solid;
+  margin-bottom: 0.33em; padding-bottom: 0;}
+
+textarea {
+   background: #000;
+   border-color:#70c90e;
+   color:#ffffff;
+   font-size:15px;
+   background-image: url("https://www.infinitumit.com.tr/wp-content/uploads/2019/08/infinitumlg.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-color: rgba(0, 0, 0, 0.1);
+}
+textarea:focus{
+      outline: none !important;
+      border-color: #70c90e;
+    }
+.button{
+    font-size: 12pt;
+    font-weight: bold;
+    vertical-align: top;
+    white-space: nowrap;
+    text-align: center;
+    color: #0F0;
+    background: #040;
+    border: 1px solid #080;
+    padding: 0.2em 0;
+    margin: 0 0.2em;
+}
+#footer {border-top: 1px solid #000; color: #999; font: italic 75% sans-serif;}
+#footer p {margin: 0 0 1em 0;}
+#footer img {float: right; margin: 0 0 0.5em 2em;}
+</style>
+<script type="text/javascript">
+function randomcase() {
+  var obj = document.getElementById('payload');
+  var encode = obj.value;
+	content = encode.split('').map(function(v) {
+  var change = Math.round(Math.random());
+  return v = change ? v.toUpperCase() : v.toLowerCase();
+	}).join('');
+	obj.value=content
+}
+function urlencode() {
+	var obj = document.getElementById('payload');
+	var unencoded = obj.value;
+	obj.value = encodeURIComponent(unencoded).replace(/'/g,"%27").replace(/"/g,"%22");
+}
+function urldecode() {
+	var obj = document.getElementById('payload');
+	var encoded = obj.value;
+	obj.value = decodeURIComponent(encoded.replace(/\+/g,  " "));
+}
+function base64encode() {
+	var obj = document.getElementById('payload');
+	var encoded = obj.value;
+	obj.value = btoa(encoded);
+}
+function base64decode() {
+	var obj = document.getElementById('payload');
+	var encoded = obj.value;
+	obj.value = atob(encoded);
+}
+function payloadex() {
+	var obj = document.getElementById('payload');
+	var encoded = obj.value;
+	obj.value = '"><script>infinitum()<\/script>';
+}
+function unicodelt(){
+	var obj= document.getElementById('payload');
+	var encoded = obj.value;
+  obj.value = encoded.replace(/</g,  "≤");
+}
+function unicodelt2(){
+	var obj= document.getElementById('payload');
+	var encoded = obj.value;
+  obj.value = encoded.replace(/</g,  "≮");
+}
+function encoder(){
+	var obj= document.getElementById('payload');
+	var encoded = obj.value;
+	obj.value = encoded.replace(/</g,  "≮");
+}
+
+</script>
+</head>
+<body>
+
+
+<form onsubmit="return false;">
+<h1>XSS Payload Generator/Encoder</h1>
+
+<textarea cols="100" rows="20" id="payload" placeholder='"><script>infinitum()</script>'></textarea>
+<div >
+
+<input class=button type="button" onclick="payloadex()" value="Example Payload">
+<input class=button type="button" onclick="randomcase()" value="Randomcase">
+<input class=button type="button" onclick="urlencode()" value="URLencode">
+<input class=button type="button" onclick="urldecode()" value="URLdecode">
+<input class=button type="button" onclick="base64encode()" value="Base64Encode">
+<input class=button type="button" onclick="base64decode()" value="Base64Decode">
+<input class=button type="button" onclick="alertescape()" value="AlertEscape">
+<input class=button type="button" onclick="unicodelt1()" value="Unicode ≤">
+<input class=button type="button" onclick="unicodelt2()" value="Unicode ≮">
+
+
+
+</div>
+
+<ul>
+</ul>
+
+</form>
+
+
+<div id="footer">
+<p>InfinitumIT Project</p>
+</div>
+
+</body>
+</html>
